@@ -1,0 +1,13 @@
+{
+    "name": "wenitalist/resume",
+    "description": "my site",
+    "type": "project-site",
+    "authors": [
+        {
+            "name": "wenitalist"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^5.4"
+    }
+}

@@ -6,7 +6,6 @@ class Router
 {
     public const massUrl = [
         "/" => [\App\Controllers\ControllerIndex::class, 'viewIndex'],
-
     ];
 
     public function checkUrl()
@@ -17,7 +16,7 @@ class Router
             $method = self::massUrl[$_SERVER['REQUEST_URI']][1];
             $controller = new $controllerClass();
 
-            if (($controller->$method()) == null) {
+            if (!method_exists($controller, $method)) {
                 $constrError = new \App\Controllers\ControllerError404();
                 echo $constrError->inputError();
             } else {

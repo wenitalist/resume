@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 abstract class AbstractController
 {
-    public function render(string $view, array $forRender = []): string
+    public function render(string $view, array $forRender = [])
     {
-        return require(__DIR__ . $view); // фиксить
+        require(__DIR__ . '/../../views' . $view);
     }
 }
